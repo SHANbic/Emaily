@@ -15,12 +15,15 @@ passport.use(
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ googleID: profile.id }).then(existingUser => {
         if (existingUser) {
+          done(null, existingUser);
         } else {
           new User({
             googleID: profile.id,
             name: profile.name.givenName,
             mail: profile.emails[0].value
-          }).save();
+          })
+            .save()
+            .then(user => done(null, user));
         }
       });
     }
