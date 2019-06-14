@@ -7,4 +7,4 @@ const userSchema = new Schema({
   mail : String
 });
 
-mongoose.model('users', userSchema)
+mongoose.model('users', userSchema) //REVIEW On indique à la base de données qu'on va utiliser le schéma users
