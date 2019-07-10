@@ -9,7 +9,7 @@ require('./services/passport'); // REVIEW on fait appel à toute notre configura
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true }); // REVIEW  connexion à mongoDB (aussi simple que ça?)
 
 const app = express(); // REVIEW notre app va utiliser express
-
+app.use(bodyParser.json());
 app.use(
   cookieSession({
     //REVIEW notre app va utiliser le module cookie-session
