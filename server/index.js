@@ -4,7 +4,8 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
-require('./models/User'); //REVIEW on charge le model User
+require('./models/User');
+require('./models/Survey');
 require('./services/passport'); // REVIEW on fait appel à toute notre configuration de passport
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true }); // REVIEW  connexion à mongoDB (aussi simple que ça?)
 
