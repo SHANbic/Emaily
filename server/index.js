@@ -23,6 +23,7 @@ app.use(passport.session()); // REVIEW on indique à passport qu'on gère des se
 
 require('./routes/authRoutes')(app); // REVIEW on importe les routes gérées par express
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
