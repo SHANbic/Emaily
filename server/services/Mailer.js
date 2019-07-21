@@ -33,13 +33,11 @@ class Mailer extends helper.Mail {
 
   addRecipients() {
     const personalize = new helper.Personalization();
-    //console.log(personalize);
 
     this.recipients.forEach(recipient => {
       personalize.addTo(recipient);
     });
     this.addPersonalization(personalize);
-    //console.log(personalize);
   }
 
   async send() {
