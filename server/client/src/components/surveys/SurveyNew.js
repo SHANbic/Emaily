@@ -4,10 +4,10 @@ import SurveyForm from './SurveyForm';
 class SurveyNew extends React.Component {
   render() {
     return (
-      <h1>
-        Survey new !
+      <div>
+        <h1>Survey new !</h1>
         <SurveyForm />
-      </h1>
+      </div>
     );
   }
 }
