@@ -2,6 +2,7 @@ import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import SurveyField from './SurveyField';
 import { Link } from 'react-router-dom';
+import validateEmails from '../../utils/validateEmails';
 
 const FIELDS = [
   { name: 'title', label: 'Survey Title' },
@@ -44,12 +45,12 @@ class SurveyForm extends React.Component {
 
 function validate(values) {
   const errors = {};
-
-  FIELDS.forEach(({name})=>{
-if(!values[name]){
-  errors[name]= `${name} field has been left empty`.toUpperCase()
-}
-  })
+  errors.emails = validateEmails(values.emails || '');
+  FIELDS.forEach(({ name }) => {
+    if (!values[name]) {
+      errors[name] = `${name} field has been left empty`.toUpperCase();
+    }
+  });
 
   return errors;
 }
