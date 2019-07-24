@@ -45,9 +45,11 @@ class SurveyForm extends React.Component {
 function validate(values) {
   const errors = {};
 
-  if (!values.title) {
-    errors.title = 'You must provide a title';
-  }
+  FIELDS.forEach(({name})=>{
+if(!values[name]){
+  errors[name]= `${name} field has been left empty`.toUpperCase()
+}
+  })
 
   return errors;
 }
