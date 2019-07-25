@@ -39,7 +39,7 @@ class SurveyForm extends React.Component {
 
 function validate(values) {
   const errors = {};
-  errors.emails = validateEmails(values.emails || '');
+  errors.recipients = validateEmails(values.recipients || '');
   formFields.forEach(({ name }) => {
     if (!values[name]) {
       errors[name] = `${name} field has been left empty`.toUpperCase();
